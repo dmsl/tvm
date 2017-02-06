@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2013, Data Management Systems Lab (DMSL), University of Cyprus.
+  ~
+  ~ Author: P. Mpeis pmpeis01@cs.ucy.ac.cy (University of Cyprus)
+  ~
+  ~ Project supervisors: A. Konstantinides, D. Zeinalipour-Yazti (University of Cyprus)
+  ~
+  ~ This file is part of TVM.
+  ~ TVM is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:key="@string/preferences">
+
+    <PreferenceCategory android:title="Localization">
+
+        <ListPreference
+                android:defaultValue="TVM2"
+                android:entries="@array/array_anonymity_algorithms_descriptions"
+                android:entryValues="@array/array_anonymity_algorithms"
+                android:key="@string/pref_key_anonymity_algorithm"
+                android:persistent="true"
+                android:summary="Control what server knows"
+                android:title="Privacy algorithm"/>
+        <Preference
+                android:defaultValue="3"
+                android:key="@string/pref_key_k_anonymity"
+                android:persistent="true"
+                android:title="Privacy tuning"
+                android:summary="Control TVM's false positives"
+                />
+
+        <ListPreference
+                android:defaultValue="KNN"
+                android:entries="@array/array_localization_algorithms_descriptions"
+                android:entryValues="@array/array_localization_algorithms"
+                android:key="@string/pref_key_localization_algorithm"
+                android:persistent="true"
+                android:summary="How to calculate position"
+                android:title="Localization Algorithm"/>
+
+        <EditTextPreference
+                android:defaultValue="4"
+                android:inputType="number"
+                android:key="@string/pref_key_k_parameter"
+                android:summary="k-Nearest Neighbor parameter"
+                android:title="Localization tuning"/>
+        <ListPreference
+                android:defaultValue="3"
+                android:entries="@array/array_datasets_descriptions"
+                android:entryValues="@array/array_datasets_values"
+                android:key="@string/pref_key_datasets"
+                android:persistent="true"
+                android:summary="Varies according to size"
+                android:title="Datasets"/>
+
+        <CheckBoxPreference
+                android:defaultValue="true"
+                android:key="@string/pref_key_draw_routes"
+                android:summaryOff="Dont see routes"
+                android:summaryOn="See what server might know"
+                android:title="Draw routes"/>
+
+        <CheckBoxPreference
+                android:defaultValue="false"
+                android:key="@string/pref_key_always_scan"
+                android:summaryOff="Only when needed"
+                android:summaryOn="While app is running"
+                android:title="Wifi scanning"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Caching">
+        <CheckBoxPreference
+                android:defaultValue="false"
+                android:key="@string/pref_key_sd_card_cache_status"
+                android:summary="Use device storage"
+                android:summaryOff="Fetch radiomaps each time"
+                android:summaryOn="Keep radiomaps on device"
+                android:title="Store raw radiomaps"/>
+        <CheckBoxPreference
+                android:defaultValue="true"
+                android:key="@string/pref_key_ram_cache_status"
+                android:summary="When to parse a radiomap"
+                android:summaryOff="Each time"
+                android:summaryOn="Only on first use"
+                android:title="Radiomap parsing"/>
+
+        <EditTextPreference
+                android:defaultValue="3"
+                android:inputType="number"
+                android:key="@string/pref_key_ram_cache_slots"
+                android:summary="Increases RAM usage."
+                android:title="Number of parsed radiomaps">
+        </EditTextPreference>
+
+        <Preference
+                android:key="@string/pref_key_clear_sd_card_cache"
+                android:title="Clear stored radiomaps"/>
+        <Preference
+                android:key="@string/pref_key_clear_ram_cache"
+                android:title="Clear parsed radiomaps"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+            android:summary="Logger"
+            android:title="Logger Preferences">
+        <ListPreference
+                android:defaultValue="5"
+                android:inputType="number"
+                android:entries="@array/samplesArray"
+                android:entryValues="@array/samplesValues"
+                android:key="@string/pref_key_samples_num"
+                android:summary="@string/samples_summary"
+                android:title="@string/samples_title"/>
+        <ListPreference
+                android:defaultValue="1000"
+                android:inputType="number"
+                android:entries="@array/intervalArray"
+                android:entryValues="@array/intervalValues"
+                android:key="@string/pref_key_samples_interval"
+                android:summary="@string/samples_interval_summary"
+                android:title="@string/samples_interval_title"/>
+
+        <EditTextPreference
+                android:defaultValue="rss-log"
+                android:key="@string/pref_key_filename_log"
+                android:summary="@string/filename_summary"
+                android:title="@string/filename_title">
+        </EditTextPreference>
+
+        <CheckBoxPreference
+                android:defaultValue="false"
+                android:key="@string/pref_key_write_mode"
+                android:summaryOff="Append mode"
+                android:summaryOn="Overwrite mode"
+                android:title="Write Mode"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Advanced">
+        <PreferenceScreen
+                android:enabled="true"
+                android:key="@string/pref_key_developer_mode_toggle"
+                android:selectable="true"
+                android:title="Developer options">
+        </PreferenceScreen>
+
+        <CheckBoxPreference
+                android:defaultValue="false"
+                android:enabled="false"
+                android:key="@string/pref_key_developer_mode"
+                android:hint="Hint: keep pressing.."
+                android:summaryOff="Disabled"
+                android:summaryOn="Enabled"/>
+        <CheckBoxPreference
+                android:defaultValue="false"
+                android:enabled="false"
+                android:key="@string/pref_key_real_simulation"
+                android:summaryOff="Using real data"
+                android:summaryOn="Feed TVM with pre-recorded route"
+                android:title="Simulate walking"/>
+    </PreferenceCategory>
+</PreferenceScreen>

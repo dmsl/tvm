@@ -1,0 +1,225 @@
+<!--
+  ~ Copyright (c) 2013, Data Management Systems Lab (DMSL), University of Cyprus.
+  ~
+  ~ Author: P. Mpeis pmpeis01@cs.ucy.ac.cy (University of Cyprus)
+  ~
+  ~ Project supervisors: A. Konstantinides, D. Zeinalipour-Yazti (University of Cyprus)
+  ~
+  ~ This file is part of TVM.
+  ~ TVM is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"/>
+    <!-- A DrawerLayout is intended to be used as the top-level content view using match_parent
+    for both width and height to consume the full space available. -->
+    <android.support.v4.widget.DrawerLayout
+            android:id="@+id/drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <!-- As the main content view, the view below consumes the entire
+             space available using match_parent in both dimensions. -->
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:tools="http://schemas.android.com/tools"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:context=".main.MainActivity">
+
+            <fragment
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/map"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    class="com.google.android.gms.maps.SupportMapFragment"
+                    />
+
+            <LinearLayout
+                    android:id="@+id/linearLayoutTopMessages"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:paddingTop="15dp"
+                    android:background="@color/teal600"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/textViewMessage1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Message1"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@android:color/white"/>
+
+                <TextView
+                        android:id="@+id/textViewMessage2"
+                        android:layout_width="match_parent"
+                        android:textAlignment="center"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"/>
+            </LinearLayout>
+            <!-- Bottom layout -->
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="vertical">
+
+                <!-- Buttons: walk simulation, and unveil matches-->
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                    <Button
+                            android:id="@+id/buttonPosition2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="15dp"
+                            android:layout_margin="10dp"
+                            android:textSize="20sp"
+                            android:drawableLeft="@drawable/ic_directions_walk_white_24dp"
+                            style="@style/ButtonColoredSmall"
+                            android:text="0"/>
+
+                    <Button
+                            android:id="@+id/buttonUnveilMatches"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_person_pin_black_48dp"
+                            android:layout_margin="10dp"
+                            android:layout_marginLeft="0dp"
+                            android:padding="0dp"
+                            android:alpha="1"
+                            android:visibility="invisible"
+                            style="@style/ButtonColoredBorderlessSmall"
+                            />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/linearLayoutDownStats"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#66B2DFDB"
+                        android:padding="5dp"
+                        android:orientation="horizontal">
+
+
+                    <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:id="@+id/detectedAPs"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="AP:  0"
+                                android:typeface="monospace"
+                                android:textColor="#353535"
+                                android:textSize="12.5dip"
+                                android:textStyle="bold"/>
+
+                        <TextView
+                                android:id="@+id/trackingInfoLabel"
+                                android:layout_width="180dip"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.0"
+                                android:maxLines="5"
+                                android:paddingLeft="2dp"
+                                android:typeface="monospace"
+                                android:text="Heading: \nX:\nY:"
+                                android:textColor="#353535"
+                                android:textSize="12.5dip"
+                                android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        <ProgressBar
+                                android:id="@+id/progressBarNetwork"
+                                android:layout_width="match_parent"
+                                android:textAlignment="center"
+                                android:layout_height="wrap_content"
+                                android:visibility="invisible"/>
+
+                        <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:orientation="vertical">
+
+                            <TextView
+                                    android:id="@+id/textViewMessage3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textAlignment="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+                            <TextView
+                                    android:id="@+id/textViewMessage4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textAlignment="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                    android:text="@string/developer_mode"
+                    android:id="@+id/tvDeveloper_mode"
+                    android:visibility="invisible"
+                    android:typeface="monospace"
+                    android:textStyle="bold"
+                    android:layout_alignParentBottom="true"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:paddingBottom="5dp"
+                    android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+        <!-- android:layout_gravity="start" tells DrawerLayout to treat
+             this as a sliding drawer on the left side for left-to-right
+             languages and on the right side for right-to-left languages.
+             The drawer is given a fixed width in dp and extends the full height of
+             the container. A solid background is used for contrast
+             with the content view. -->
+        <ListView
+                android:id="@+id/left_drawer"
+                android:layout_width="240dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:choiceMode="singleChoice"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0dp"
+                android:background="#CFD8DC"/>
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>

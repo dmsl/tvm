@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2013, Data Management Systems Lab (DMSL), University of Cyprus.
+  ~
+  ~ Author: P. Mpeis pmpeis01@cs.ucy.ac.cy (University of Cyprus)
+  ~
+  ~ Project supervisors: A. Konstantinides, D. Zeinalipour-Yazti (University of Cyprus)
+  ~
+  ~ This file is part of TVM.
+  ~ TVM is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+        >
+
+    <LinearLayout
+                    android:id="@+id/linearLayoutDownStats"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:background="#66B2DFDB"
+                    android:padding="5dp"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/detectedAPs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="AP: "
+                        android:textColor="#353535"
+                        android:textSize="12.5dip"
+                        android:textStyle="bold"/>
+
+                <TextView
+                        android:id="@+id/trackingInfoLabel"
+                        android:layout_width="180dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="0.0"
+                        android:maxLines="5"
+                        android:paddingLeft="2dip"
+                        android:text="Heading: \nX:\nY:"
+                        android:textColor="#353535"
+                        android:textSize="12.5dip"
+                        android:textStyle="bold"/>
+            </LinearLayout>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ProgressBar
+                android:id="@+id/progressBarNetwork"
+                android:layout_width="match_parent"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:visibility="visible"/>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/textViewMessage3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+            <TextView
+                    android:id="@+id/textViewMessage4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

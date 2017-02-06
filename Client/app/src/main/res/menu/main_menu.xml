@@ -1,0 +1,56 @@
+<!--
+  ~ Copyright (c) 2013, Data Management Systems Lab (DMSL), University of Cyprus.
+  ~
+  ~ Author: P. Mpeis pmpeis01@cs.ucy.ac.cy (University of Cyprus)
+  ~
+  ~ Project supervisors: A. Konstantinides, D. Zeinalipour-Yazti (University of Cyprus)
+  ~
+  ~ This file is part of TVM.
+  ~ TVM is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        >
+
+    <item
+            android:id="@+id/itemFindMe"
+            android:icon="@drawable/ic_my_location_black_24dp"
+            app:showAsAction="ifRoom"
+            android:title="Find Me">
+    </item>
+    <item
+            android:id="@+id/itemTrackMe"
+            android:icon="@drawable/ic_navigation_black_24dp"
+            app:showAsAction="ifRoom"
+            android:title="@string/tracker"
+            >
+    </item>
+    <item
+            android:id="@+id/itemRecord"
+            android:title="Record"
+            android:visible="false"
+            android:icon="@android:drawable/ic_menu_save"
+            >
+    </item>
+    <item
+            android:id="@+id/itemAppToggle"
+            android:icon="@android:drawable/ic_menu_edit"
+            android:title="@string/logger">
+    </item>
+    <item
+            android:id="@+id/itemPreferences"
+            android:title="Preferences">
+    </item>
+</menu>

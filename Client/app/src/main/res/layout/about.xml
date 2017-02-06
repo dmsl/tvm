@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2013, Data Management Systems Lab (DMSL), University of Cyprus.
+  ~
+  ~ Author: P. Mpeis pmpeis01@cs.ucy.ac.cy (University of Cyprus)
+  ~
+  ~ Project supervisors: A. Konstantinides, D. Zeinalipour-Yazti (University of Cyprus)
+  ~
+  ~ This file is part of TVM.
+  ~ TVM is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:id="@+id/aboutwindow">
+    <TextView
+            android:id="@+id/tAbout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.64"
+            android:text="About CrowdSpace Context Scanner\n CrowdSpace \n\nContext Scanner implemented \n2012\n\nAffiliation:\n
+							Data Management Systems Laboratory\n
+							Dept. of Computer Science\n
+							University of Cyprus\n
+							P.O. Box 20537\n
+							1678 Nicosia, CYPRUS\n
+							Web: http://dmsl.cs.ucy.ac.cy/\n
+							Email: dmsl@cs.ucy.ac.cy\n
+							Tel: +357-22-892755\n
+							Fax: +357-22-892701"/>
+</LinearLayout>

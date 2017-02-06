@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2013, Data Management Systems Lab (DMSL), University of Cyprus.
+  ~
+  ~ Author: P. Mpeis pmpeis01@cs.ucy.ac.cy (University of Cyprus)
+  ~
+  ~ Project supervisors: A. Konstantinides, D. Zeinalipour-Yazti (University of Cyprus)
+  ~
+  ~ This file is part of TVM.
+  ~ TVM is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+    <string-array name="array_experiments">
+        <item>Series 1</item>
+    </string-array>
+    <string-array name="array_localization_algorithms_descriptions">
+        <item>KNN</item>
+        <item>Weighted KNN</item>
+        <item>MMSE</item>
+        <item>Weighted MMSE</item>
+    </string-array>
+    <string-array name="array_datasets_descriptions">
+        <item>0: Real radiomap</item>
+        <item>1: 10mbs</item>
+        <item>2: 100mbs</item>
+        <item>3: 1gb</item>
+        <item>4: 20gb</item>
+    </string-array>
+    <string-array name="array_datasets_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="array_anonymity_algorithms_descriptions">
+        <item>Google Maps (none)</item>
+        <item>Small radiomap (tiny)</item>
+        <item>Big radiomap (some)</item>
+        <item>TVM0 (one-off)</item>
+        <item>TVM1 (one-off)</item>
+        <item>TVM2 (full/controlled)</item>
+    </string-array>
+    <string-array name="array_anonymity_algorithms">
+        <item>GMAPS</item>
+        <item>FRMAP</item>
+        <item>PRMAP</item>
+        <item>TVM0</item>
+        <item>TVM1</item>
+        <item>TVM2</item>
+    </string-array>
+    <string-array name="array_localization_algorithms">
+        <item>KNN</item>
+        <item>WKNN</item>
+        <item>MMSE</item>
+        <item>WMMSE</item>
+    </string-array>
+    <string-array name="samplesArray">
+        <item>5 samples</item>
+        <item>10 samples</item>
+        <item>15 samples</item>
+        <item>20 samples</item>
+        <item>25 samples</item>
+        <item>30 samples</item>
+    </string-array>
+    <string-array name="samplesValues">
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+    </string-array>
+    <string-array name="intervalArray">
+        <item>0.5 sec</item>
+        <item>1 sec</item>
+        <item>2 sec</item>
+    </string-array>
+    <string-array name="intervalValues">
+        <item>500</item>
+        <item>1000</item>
+        <item>2000</item>
+    </string-array>
+
+</resources>
